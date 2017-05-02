@@ -1,0 +1,15 @@
+  <app-nx-menu-item
+    [menuItem]="item"
+    *ngFor="let item of menuItems"></app-nx-menu-item>
+
+
+
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
+  <a class="navbar-brand" href="#">nxTech</a>
+  <ul class="nav navbar-nav">
+    <li *ngFor="let item of menuItems">
+      <a href="{{item.route.path}}">{{item.title}}</a>
+    </li>
+
+  </ul>
+</nav>
