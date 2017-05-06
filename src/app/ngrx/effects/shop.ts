@@ -8,17 +8,21 @@ import {REQUEST_PRODUCTS, RECEIVED_PRODUCTS} from '../reducers/products';
 import {CHECKOUT_REQUEST, CHECKOUT_SUCCESS} from '../reducers/cart';
 // import * as shop from '../api/shop';
 import { NxProductService } from '../../services';
+
 @Injectable()
 export class ShopEffects {
 
     constructor(
         private _productService: NxProductService,
         private _actions$: Actions,
-        private _store: Store<any>) { }
+        private _store: Store<any>) { 
+            this._productService.getProduct().map(res => console.log(res))
+        }
 
     
 
-    @Effect() load$ = this._actions$
+    @Effect()
+    load$ = this._actions$
         .ofType(REQUEST_PRODUCTS)
         .map(action => JSON.stringify(action.payload))
         .switchMap(() => this._productService.getProduct())
@@ -29,7 +33,8 @@ export class ShopEffects {
             };
         });
 
-    @Effect() checkout$ = this._actions$
+    @Effect()
+    checkout$ = this._actions$
         .ofType(CHECKOUT_REQUEST)
         .map(action => JSON.stringify(action.payload))
         // .switchMap(payload => shop.default.buyProducts(payload, 300))

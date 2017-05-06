@@ -8,6 +8,9 @@ import { NxMenuService } from '../../services';
   styleUrls: ['./nx-menu.component.scss']
 })
 export class NxMenuComponent implements OnInit {
+  @Input() cart:any;
+
+
   public menuItems: any[];
   protected _menuItemsSub: Subscription;
   public showHoverElem: boolean;
@@ -15,7 +18,11 @@ export class NxMenuComponent implements OnInit {
   public hoverElemTop: number;
   protected _onRouteChange: Subscription;
   public outOfArea: number = -200;
-  constructor(private _router: Router, private _service: NxMenuService) { }
+
+  menuPaths = [];
+  constructor(private _router: Router, private _service: NxMenuService) {
+    
+   }
 
   public updateMenu(newMenuItems) {
     this.menuItems = newMenuItems;
@@ -44,6 +51,8 @@ export class NxMenuComponent implements OnInit {
     });
 
     this._menuItemsSub = this._service.menuItems.subscribe(this.updateMenu.bind(this));
+
+    console.log(this.cart);
   }
 
   public ngOnDestroy(): void {

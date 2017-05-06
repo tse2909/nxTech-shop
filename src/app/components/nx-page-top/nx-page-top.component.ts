@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-nx-page-top',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nx-page-top.component.scss']
 })
 export class NxPageTopComponent implements OnInit {
-
+@Input() cart:any;
   constructor() { }
 
   ngOnInit() {

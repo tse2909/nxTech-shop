@@ -6,8 +6,8 @@ import 'rxjs/add/observable/combineLatest'
 import { Observable } from 'rxjs/Observable';
 import { compose } from '@ngrx/core/compose';
 
-import  * as fromCart from './cart';
-import  * as fromProducts from './products';
+import * as fromCart from './cart';
+import * as fromProducts from './products';
 
 export interface AppState {
     cart: fromCart.CartState;
@@ -38,18 +38,18 @@ export function getCalculatedCartList() {
     return (state$: Observable<AppState>) => {
         return Observable
             .combineLatest(state$.let(getCartState()), state$.let(getProductEntities()))
-                .map(([cart, products]: any[]) => {
-                    return cart.productIds.map(productId => {
-                        return {
-                            id: productId,
-                            title: products[productId].name,
-                            brand: products[productId].categories[0].name,
-                            image: products[productId].images[0].src,
-                            price: products[productId].price,
-                            quantity: cart.quantityById[productId]
-                        };
-                    });
+            .map(([cart, products]: any[]) => {
+                return cart.productIds.map(productId => {
+                    return {
+                        id: productId,
+                        title: products[productId].name,
+                        brand: products[productId].categories[0].name,
+                        image: products[productId].images[0].src,
+                        price: products[productId].price,
+                        quantity: cart.quantityById[productId]
+                    };
                 });
+            });
     };
 }
 
@@ -57,35 +57,68 @@ export function getCalculatedCartList() {
 export function getCartCnt() {
     return (state$: Observable<AppState>) => {
         return state$.let(getCartState())
-                .map((cart: any) => {
-                    return cart.productIds.map(productId => {
-                        return {
-                            quantity: cart.quantityById[productId]
+            .map((cart: any) => {
+                return cart.productIds.map(productId => {
+                    return {
+                        quantity: cart.quantityById[productId]
 
-                        };
-                    });
+                    };
                 });
+            });
     };
 }
 
+// export function getProductbyId(productId) {
+//     return (state$: Observable<AppState>) => {
+//         return state$.let(getProductState())
+//             .map((products: any) => {
+//                 return {
+//                     id: products[productId].id,
+//                     name: products[productId].name,
+//                     category: products[productId].categories[0].name,
+//                     image: products[productId].images[0].src,
+//                     price: products[productId].price,
+//                     description: products[productId].description,
 
-
+//                 };
+//             });
+// };
+// }
+export function getProductbyId(productId) {
+    return (state$: Observable<AppState>) => {
+        return Observable
+            .combineLatest(state$.let(getCartState()), state$.let(getProductEntities()))
+            .map(([cart, products]: any[]) => {
+                // return cart.productIds.map(productId => {
+                return {
+                    id: products[productId].id,
+                    name: products[productId].name,
+                    category: products[productId].categories[0].name,
+                    image: products[productId].images[0].src,
+                    price: products[productId].price,
+                    description: products[productId].description,
+                    quantity: cart.quantityById[productId] ? cart.quantityById[productId] : 1
+                };
+                // });
+            });
+    };
+}
 export function getProductWithCart(productId) {
     return (state$: Observable<AppState>) => {
         return Observable
             .combineLatest(state$.let(getCartState()), state$.let(getProductEntities()))
-                .map(([cart, products]: any[]) => {
-                    // return cart.productIds.map(productId => {
-                        return {
-                            id: products[productId].id,
-                            name: products[productId].name,
-                            category: products[productId].categories[0].name,
-                            image: products[productId].images[0].src,
-                            price: products[productId].price,
-                            description: products[productId].description,
-                            quantity: cart.quantityById[productId] ? cart.quantityById[productId] : 1
-                        };
-                    // });
-                });
+            .map(([cart, products]: any[]) => {
+                // return cart.productIds.map(productId => {
+                return {
+                    id: products[productId].id,
+                    name: products[productId].name,
+                    category: products[productId].categories[0].name,
+                    image: products[productId].images[0].src,
+                    price: products[productId].price,
+                    description: products[productId].description,
+                    quantity: cart.quantityById[productId] ? cart.quantityById[productId] : 1
+                };
+                // });
+            });
     };
 }

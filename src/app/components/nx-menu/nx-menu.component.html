@@ -10,6 +10,11 @@
     <li *ngFor="let item of menuItems">
       <a href="{{item.route.path}}">{{item.title}}</a>
     </li>
-
   </ul>
+
+  <ul class="nav navbar-nav navbar-right">
+      <li><a [routerLink]="['/pages/cart']"><span class="glyphicon glyphicon-shopping-cart"></span><app-nx-cart-navbar></app-nx-cart-navbar></a></li>
+      <!--<a [routerLink]="['/route-link']">route-text</a>-->
+      
+    </ul>
 </nav>

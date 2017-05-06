@@ -3,14 +3,20 @@ import { CommonModule }  from '@angular/common';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
-import { NxMenuComponent, NxMenuItemComponent, NxPageTopComponent, NxProductListComponent } from '../components';
+import { NxMenuComponent, NxMenuItemComponent, NxPageTopComponent, NxProductListComponent, NxProductDetailComponent, NxCartListComponent } from '../components';
 import { NxMenuService, NxProductService } from '../services';
+// import { CartNavbarComponent } from './cart-navbar/cart-navbar.component';
+import { NxCartNavbarComponent } from './nx-cart-navbar/nx-cart-navbar.component';
+// import { NxCartListComponent } from './nx-cart-list/nx-cart-list.component';
+// import { NxProductDetailComponent } from './nx-product-detail/nx-product-detail.component';
 
 const NX_COMPONENTS = [
   NxMenuComponent,
   NxMenuItemComponent,
   NxPageTopComponent,
-  NxProductListComponent
+  NxProductListComponent,
+  NxProductDetailComponent,
+  NxCartNavbarComponent,NxCartListComponent
 ];
 
 const NX_DIRECTIVES = [
@@ -34,7 +40,9 @@ const NX_VALIDATORS = [
   declarations: [
     ...NX_PIPES,
     ...NX_DIRECTIVES,
-    ...NX_COMPONENTS
+    ...NX_COMPONENTS,
+    
+    // NxProductDetailComponent
   ],
   imports: [
     CommonModule,

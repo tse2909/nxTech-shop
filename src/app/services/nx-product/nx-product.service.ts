@@ -33,21 +33,21 @@ export class NxProductService {
 
   }
   
-  //   getProductEffect() {
+    getProductEffect() {
 
-  //   // let url = this.rooturl + "'&$top=10";
+    // let url = this.rooturl + "'&$top=10";
 
-  //   let headers = new Headers();
+    let headers = new Headers();
 
-  //   return this.http.get(this.rooturl+"/getProducts",)
-  //   .do((res: Response) => console.log(res))
-  //   .map((res: Response) => res.json().body)
-  //   .map((res) => JSON.parse(res))
-  //   // .map((res: Response) => res.json())
-  //     // .map(res => res.json())
+    return this.http.get(this.rooturl+"/getProducts",)
+    .do((res: Response) => console.log(res))
+    .map((res: Response) => res.json().body)
+    .map((res) => JSON.parse(res)).subscribe()
+    // .map((res: Response) => res.json())
+      // .map(res => res.json())
 
 
-  // }
+  }
 
   postOrders(data){
     let headers = new Headers();

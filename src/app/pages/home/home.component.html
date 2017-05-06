@@ -32,4 +32,4 @@
   </a>
 </div>
 
-<app-nx-product-list></app-nx-product-list>
+<app-nx-product-list [products]="(products | async)" (gotoDetail)="gotoDetail($event)"></app-nx-product-list>

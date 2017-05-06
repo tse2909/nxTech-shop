@@ -37,17 +37,16 @@ const APP_PROVIDERS = [
     BrowserModule,
     FormsModule,
     HttpModule,
+    StoreModule.provideStore({
+      cart: cartReducer,
+      products: productsReducer
+    }),
+    EffectsModule.run(ShopEffects),
+    StoreDevtoolsModule.instrumentOnlyWithExtension(),
     routing,
     PagesModule,
     ComponentsModule.forRoot(),
-    StoreModule.provideStore({
-      cart: cartReducer,
-      product: productsReducer,
-    }),
-    StoreDevtoolsModule.instrumentOnlyWithExtension({
-      maxAge: 5
-    }),
-    EffectsModule.run(ShopEffects)
+
   ],
   providers: [APP_PROVIDERS],
   bootstrap: [AppComponent]

@@ -3,10 +3,34 @@ export const PAGES_MENU = [
     path: 'pages',
     children: [
       {
-        path: 'home',
+        path: '#/pages/home',
         data: {
           menu: {
             title: 'Home',
+            icon: 'ion-android-home',
+            selected: false,
+            expanded: false,
+            order: 0
+          }
+        }
+      },
+      {
+        path: '#/pages/new',
+        data: {
+          menu: {
+            title: 'New',
+            icon: 'ion-android-home',
+            selected: false,
+            expanded: false,
+            order: 0
+          }
+        }
+      },
+      {
+        path: '#/pages/sale',
+        data: {
+          menu: {
+            title: 'Sale',
             icon: 'ion-android-home',
             selected: false,
             expanded: false,
