@@ -36,7 +36,25 @@ export const PAGES_MENU = [
             expanded: false,
             order: 0
           }
-        }
+        },
+        children: [
+          {
+            path: 'inputs',
+            data: {
+              menu: {
+                title: 'general.menu.form_inputs',
+              }
+            }
+          },
+          {
+            path: 'layouts',
+            data: {
+              menu: {
+                title: 'general.menu.form_layouts',
+              }
+            }
+          }
+        ]
       },
       {
         path: 'mac',

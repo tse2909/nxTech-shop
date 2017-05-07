@@ -11,7 +11,9 @@ import { GlobalState } from './global.state';
 
 import { cartReducer } from './ngrx/reducers/cart';
 import { productsReducer } from './ngrx/reducers/products';
-import { StoreModule } from '@ngrx/store';
+import { StoreModule, combineReducers } from '@ngrx/store';
+import { compose } from '@ngrx/core/compose';
+import { localStorageSync } from 'ngrx-store-localstorage';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { ShopEffects } from './ngrx/effects/shop';

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { Routes } from '@angular/router';
 
 import { NxMenuService } from '../services';
@@ -10,7 +10,7 @@ import { getCalculatedCartList } from '../ngrx/reducers';
   templateUrl: './pages.component.html',
   styleUrls: ['./pages.component.scss']
 })
-export class PagesComponent implements OnInit {
+export class PagesComponent implements OnInit, OnChanges  {
   cart: any;
   constructor(private _menuService: NxMenuService, private store: Store<any>) { 
     this.cart = this.store.let(getCalculatedCartList());
@@ -19,5 +19,9 @@ export class PagesComponent implements OnInit {
   ngOnInit() {
     this._menuService.updateMenuByRoutes(<Routes>PAGES_MENU);
   }
+
+  ngOnChanges() {
+      this.cart = this.store.let(getCalculatedCartList());
+    }
 
 }

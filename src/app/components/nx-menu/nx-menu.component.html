@@ -1,20 +1,28 @@
-  <app-nx-menu-item
-    [menuItem]="item"
-    *ngFor="let item of menuItems"></app-nx-menu-item>
+<app-nx-menu-item [menuItem]="item" *ngFor="let item of menuItems"></app-nx-menu-item>
 
 
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
+      <a class="navbar-brand" href="#">SANDORA</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li *ngFor="let item of menuItems" [class.dropdown]="item.children">
+          <a [class.dropdown-toggle]="item.children" href="{{item.route.path}}">{{item.title}}</a>
+        
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a [routerLink]="['/pages/cart']"><span class="glyphicon glyphicon-shopping-cart"></span><app-nx-cart-navbar></app-nx-cart-navbar></a></li>
+        <!--<a [routerLink]="['/route-link']">route-text</a>-->
 
-<nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
-  <a class="navbar-brand" href="#">nxTech</a>
-  <ul class="nav navbar-nav">
-    <li *ngFor="let item of menuItems">
-      <a href="{{item.route.path}}">{{item.title}}</a>
-    </li>
-  </ul>
-
-  <ul class="nav navbar-nav navbar-right">
-      <li><a [routerLink]="['/pages/cart']"><span class="glyphicon glyphicon-shopping-cart"></span><app-nx-cart-navbar></app-nx-cart-navbar></a></li>
-      <!--<a [routerLink]="['/route-link']">route-text</a>-->
-      
-    </ul>
+      </ul>
+    </div>
+  </div>
 </nav>
