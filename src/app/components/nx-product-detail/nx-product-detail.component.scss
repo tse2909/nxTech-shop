@@ -6,7 +6,7 @@ body{
 
 
 .product-content {
-    border: 1px solid #dfe5e9;
+    // border: 1px solid #dfe5e9;
     margin-bottom: 20px;
     margin-top: 12px;
     background: #fff
@@ -218,11 +218,13 @@ body{
 
 .product-deatil .name {
     margin-top: 0;
-    margin-bottom: 0
+    margin-bottom: 0;
+    font-weight: 900;
 }
 
 .product-deatil .name small {
-    display: block
+    display: block;
+    padding-top: 10px;
 }
 
 .product-deatil .name a {
@@ -324,4 +326,20 @@ body{
 .message img.online {
     width:40px;
     height:40px;
+}
+
+img{
+    margin: auto;
+}
+
+.btn-success{
+    background-color: red;
+    border-color: red;
+}
+
+.btn-group-lg>.btn, .btn-lg{
+    border-radius: 0;
+    padding: 20px;
+    font-weight: 600;
+    font-size: 20px;
 }

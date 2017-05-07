@@ -21,8 +21,8 @@ export const routes: Routes = [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'cart', loadChildren: './cart/cart.module#CartModule' },
       { path: 'home', loadChildren: './home/home.module#HomeModule' },
-      { path: 'new', loadChildren: './product-all/product-all.module#ProductAllModule' },
-      { path: 'sale', loadChildren: './product-all/product-all.module#ProductAllModule' },
+      { path: 'new', loadChildren: './product-all/product-all.module#ProductAllModule', data : {type : 'ALL', filter: 'NEW'} },
+      { path: 'sale', loadChildren: './product-all/product-all.module#ProductAllModule', data : {type : 'ALL', filter: 'SALE'}  },
       { path: 'product/:id', loadChildren: './product-detail/product-detail.module#ProductDetailModule' },
     ]
   }

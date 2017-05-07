@@ -7,15 +7,18 @@ import { NxProductService } from '../../services/nx-product';
 })
 export class NxProductListComponent implements OnInit {
   @Input() products: any;
-
+  @Input() title: any;
   @Output() gotoDetail = new EventEmitter<any>();
-  
-  constructor(private _service: NxProductService) { 
+
+  constructor(private _service: NxProductService) {
     // this._service.getProduct().subscribe(k => {this.products = k; console.log(k)});
-    
+
   }
 
   ngOnInit() {
+    if(!this.title){
+      this.title ="ALL ITEMS"
+    }
   }
 
 }
