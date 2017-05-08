@@ -339,7 +339,22 @@ img{
 
 .btn-group-lg>.btn, .btn-lg{
     border-radius: 0;
-    padding: 20px;
+    padding: 10px;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 16px;
 }
+
+@media (max-width: 991px) {
+    h2 {
+      font-size: 20px;
+      text-align: center }
+    .btn-lg{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 100;
+
+    }
+  
+    }

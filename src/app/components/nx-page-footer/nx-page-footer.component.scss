@@ -1,7 +1,7 @@
 a{
     color: gray;
-    font-size: 16px;
-    line-height: 10px;
+    font-size: 12px;
+    // line-height: 10px;
 }
 
 ul{
@@ -19,3 +19,21 @@ ul li{
     margin-top: 50px;
     padding-top: 50px
 }
+
+@media (max-width: 991px) {
+    .row {
+      text-align: center; }
+
+      h4{
+        margin-top: 30px;
+    }
+
+    .footer{
+        margin-top: 20px;
+        padding-top: 0px;
+        margin-bottom: 30px;
+    }
+
+    }
+
+    

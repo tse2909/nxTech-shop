@@ -6,16 +6,19 @@
 }
 .thumbnail{
   border: 0;
+  cursor: pointer;
 }
 .thumbnail .caption{
   padding: 0;
 }
 .product-title{
   font-weight: 400;
+  font-size: 12px;
 }
 .product-price{
   font-weight: 800;
   color: #cf000f;
+  font-size: 12px;
 }
 
 img {
@@ -46,3 +49,5 @@ img {
   height:240px
 }
 }
+
+

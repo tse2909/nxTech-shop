@@ -4,3 +4,11 @@
 body, html {
   font-family: 'Poppins', sans-serif;
 }
+
+body {
+    padding-top: 50px;
+  }
+
+@media (min-width: 1200px) {
+    .container {
+      width: 1080px; } }
