@@ -3,4 +3,6 @@ export * from './nx-menu';
 export * from './nx-product-list';
 export * from './nx-product-detail';
 export * from './nx-cart-list';
-export * from './nx-page-top'
+export * from './nx-page-top';
+export * from './nx-page-footer';
+export * from './nx-cart-navbar'
