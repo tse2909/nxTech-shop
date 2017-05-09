@@ -22,8 +22,11 @@ export class PagesComponent implements OnInit, OnChanges  {
 
   ngOnChanges() {
       this.cart = this.store.let(getCalculatedCartList());
+      console.log(this.cart);
     }
    onDeactivate() {
     this.renderer.setElementProperty(document.body, "scrollTop", 0);
   }
+
+
 }

@@ -19,7 +19,7 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a data-toggle="collapse" data-target=".navbar-collapse.in" [routerLink]="['/pages/cart']"><span class="glyphicon glyphicon-shopping-cart"></span><app-nx-cart-navbar></app-nx-cart-navbar></a></li>
+        <li><a data-toggle="collapse" data-target=".navbar-collapse.in" href="#/pages/cart"><span class="glyphicon glyphicon-shopping-cart"></span> Cart<app-nx-cart-navbar [cart]="(cart)"></app-nx-cart-navbar></a></li>
         <!--<a [routerLink]="['/route-link']">route-text</a>-->
 
       </ul>

@@ -11,5 +11,5 @@ export class NxPageTopComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  
 }

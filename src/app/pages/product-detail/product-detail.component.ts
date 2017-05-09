@@ -49,7 +49,6 @@ export class ProductDetailComponent implements OnInit {
 
       this.actions$.next(this.addToCartAction($event));
       this.cart = this.store.let(getCalculatedCartList());
-      
     }, 300);
   }
 }

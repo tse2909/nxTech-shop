@@ -1,11 +1,11 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnChanges } from '@angular/core';
 import { NxProductService } from '../../services/nx-product';
 @Component({
   selector: 'app-nx-product-list',
   templateUrl: './nx-product-list.component.html',
   styleUrls: ['./nx-product-list.component.scss']
 })
-export class NxProductListComponent implements OnInit {
+export class NxProductListComponent implements OnInit,OnChanges {
   @Input() products: any;
   @Input() title: any;
   @Output() gotoDetail = new EventEmitter<any>();
@@ -19,6 +19,10 @@ export class NxProductListComponent implements OnInit {
     if(!this.title){
       this.title ="ALL ITEMS"
     }
+  }
+
+  ngOnChanges(){
+    console.log(this.products);
   }
 
 }
