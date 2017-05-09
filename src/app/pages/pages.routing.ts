@@ -20,6 +20,7 @@ export const routes: Routes = [
     children: [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'cart', loadChildren: './cart/cart.module#CartModule' },
+      { path: 'checkout', loadChildren: './checkout/checkout.module#CheckoutModule' },
       { path: 'home', loadChildren: './home/home.module#HomeModule' },
       { path: 'new', loadChildren: './product-all/product-all.module#ProductAllModule', data : {type : 'ALL', filter: 'NEW'} },
       { path: 'sale', loadChildren: './product-all/product-all.module#ProductAllModule', data : {type : 'ALL', filter: 'SALE'}  },
