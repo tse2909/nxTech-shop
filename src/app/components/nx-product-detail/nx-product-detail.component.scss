@@ -343,6 +343,19 @@ img{
     font-weight: 600;
     font-size: 16px;
 }
+.btn-group-lg>.btn, .btn-lg:after{
+    content: 'ADD TO BAG';
+}
+
+
+.adding-cart {
+    background: #000;
+    border-color: #000; pointer-events: none;
+     cursor: default;
+}
+.adding-cart:after{
+     content: 'ADDING ...';
+}
 
 @media (max-width: 991px) {
     h2 {

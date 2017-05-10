@@ -6,11 +6,7 @@
 			<div class="col-md-5 col-sm-12 col-xs-12 ">
 				<div class="product-image">
 					<div id="myCarousel-2" class="carousel slide">
-						<ol class="carousel-indicators">
-							<li data-target="#myCarousel-2" data-slide-to="0" class=""></li>
-							<li data-target="#myCarousel-2" data-slide-to="1" class="active"></li>
-							<li data-target="#myCarousel-2" data-slide-to="2" class=""></li>
-						</ol>
+						
 						<div class="carousel-inner">
 							<!-- Slide 1 -->
 							<div class="item active">
@@ -25,8 +21,7 @@
 										<img src="http://lorempixel.com/300/300/technics/1/" alt="">
 									</div>-->
 						</div>
-						<a class="left carousel-control" href="#myCarousel-2" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left"></span> </a>
-						<a class="right carousel-control" href="#myCarousel-2" data-slide="next"> <span class="glyphicon glyphicon-chevron-right"></span> </a>
+
 					</div>
 				</div>
 			</div>
@@ -79,7 +74,7 @@
 				<hr>
 				<div class="row">
 					<div class="col-sm-12 col-md-6 col-lg-6">
-						<a href="javascript:void(0);" class="btn btn-success btn-lg" (click)="addtoCartClick()">ADD TO BAG</a>
+						<a href="javascript:void(0);" [class.adding-cart]="addingCart" class="btn btn-success btn-lg" (click)="addtoCartClick()" ></a>
 					</div>
 
 				</div>

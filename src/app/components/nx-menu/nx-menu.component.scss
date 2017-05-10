@@ -2,3 +2,50 @@
     margin: 0;
     border-radius: 0;
 }
+
+.navbar-inverse .navbar-brand{
+    color: #FFF;
+}
+.navbar-static-top{
+    margin-top: 5px;
+}
+
+.cart-header button.navbar-toggle{
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-right: 40px
+}
+
+.nav>li{
+    padding-left: 20px;
+    font-weight: 900;
+}
+
+.menu-bottom button{
+    width:100%;
+}
+
+.menu-bottom button.navbar-toggle{
+        border: 0;
+        margin-right:0;
+    }
+
+    .menu-bottom button.navbar-toggle input[type="search"]{
+        border: 0.3px solid gray;
+        border-radius: 0;
+    }
+
+
+    .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover{
+        background: #fff;
+    }
+
+
+    .navbar-default .navbar-collapse, .navbar-default .navbar-form{
+        font-weight: 900;
+        font-size: 12px;
+        color: #000;
+
+
+    }

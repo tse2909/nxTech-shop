@@ -60,7 +60,7 @@ export const PAGES_MENU = [
         path: 'mac',
         data: {
           menu: {
-            title: 'Mac',
+            title: 'Makeup',
             icon: 'ion-edit',
             selected: false,
             expanded: false,
@@ -72,7 +72,31 @@ export const PAGES_MENU = [
         path: 'iPad',
         data: {
           menu: {
-            title: 'iPad',
+            title: 'Skincare',
+            icon: 'ion-gear-a',
+            selected: false,
+            expanded: false,
+            order: 250,
+          }
+        }
+      },
+      {
+        path: 'iPad',
+        data: {
+          menu: {
+            title: 'Men',
+            icon: 'ion-gear-a',
+            selected: false,
+            expanded: false,
+            order: 250,
+          }
+        }
+      },
+      {
+        path: 'iPad',
+        data: {
+          menu: {
+            title: 'Brands',
             icon: 'ion-gear-a',
             selected: false,
             expanded: false,
