@@ -19,7 +19,10 @@ ul li{
     margin-top: 50px;
     padding-top: 50px
 }
-
+  .footer input{
+        border: 1px solid black;
+        border-radius: 0;
+    }
 @media (max-width: 991px) {
     .row {
       text-align: center; }
@@ -33,6 +36,8 @@ ul li{
         padding-top: 0px;
         margin-bottom: 30px;
     }
+
+  
 
     }
 

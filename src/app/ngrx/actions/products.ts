@@ -1,6 +1,6 @@
 
 import {Action} from '@ngrx/store';
-import {ADD_TO_CART, REQUEST_PRODUCTS, REMOVE_ITEM, IProduct} from '../reducers/products';
+import {ADD_TO_CART, REQUEST_PRODUCTS, REMOVE_ITEM,UPDATE_ITEM, IProduct} from '../reducers/products';
 
 
 export const getProducts = () => {
@@ -13,4 +13,8 @@ export const addToCart = (product) => {
 
 export const removeItem = (product) => {
     return <Action>{ type: REMOVE_ITEM, payload: product };
+}
+
+export const updateItem = (product) => {
+    return <Action>{ type: UPDATE_ITEM, payload: {product:product.product, newQty:product.newQty} };
 }

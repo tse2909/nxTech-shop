@@ -32,7 +32,7 @@
                                             </td>
                                             <td>
                                                 <form class="form-inline">
-                                                    <input class="form-control" type="number" value="{{c.quantity}}">
+                                                    <input #cb1 (change)="changeQty.emit({product:c,newQty: cb1.value})" class="form-control" type="number" value="{{c.quantity}}">
                                                     <a (click)="deleteItem.emit(c)" class="btn btn-primary"><i class="glyphicon glyphicon-remove"></i></a>
                                                 </form>
                                             </td>

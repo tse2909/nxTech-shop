@@ -8,7 +8,7 @@ export const ADD_TO_CART = 'ADD_TO_CART';
 export const REMOVE_ITEM = 'REMOVE_ITEM';
 export const REQUEST_PRODUCTS = 'REQUEST_PRODUCTS';
 export const RECEIVED_PRODUCTS = 'RECEIVED_PRODUCTS';
-
+export const UPDATE_ITEM = 'UPDATE_ITEM';
 
 export interface IProduct {
     id: number;

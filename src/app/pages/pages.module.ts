@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { PagesComponent } from './pages.component';
 import { routing }       from './pages.routing';
 import { ComponentsModule } from '../components/components.module';
+// import { BrandComponent } from './brand/brand.component';
 // import { CheckoutComponent } from './checkout/checkout.component';
 // import { CartComponent } from './cart/cart.component';
 // import { ProductAllComponent } from './product-all/product-all.component';

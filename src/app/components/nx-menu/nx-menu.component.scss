@@ -1,16 +1,18 @@
-.navbar{
+.navbar {
     margin: 0;
     border-radius: 0;
 }
 
-.navbar-inverse .navbar-brand{
+.navbar-inverse .navbar-brand {
     color: #FFF;
+    font-size: 12px;
 }
-.navbar-static-top{
+
+.navbar-static-top {
     margin-top: 5px;
 }
 
-.cart-header button.navbar-toggle{
+.cart-header button.navbar-toggle {
     padding: 0;
     margin-top: 0;
     margin-bottom: 0;
@@ -18,39 +20,89 @@
     padding-right: 40px;
 }
 
-.nav>li{
+.nav>li {
     padding-left: 20px;
     font-weight: 900;
 }
 
-.menu-bottom button{
-    width:100%;
+.menu-bottom button {
+    width: 100%;
 }
 
-.menu-bottom button.navbar-toggle{
-        border: 0;
-        margin-right:0;
+.menu-bottom button.navbar-toggle {
+    border: 0;
+    margin-right: 0;
+}
+
+.menu-bottom button.navbar-toggle input[type="search"] {
+    border: 0.3px solid gray;
+    border-radius: 0;
+}
+
+.navbar-default .navbar-toggle:focus,
+.navbar-default .navbar-toggle:hover {
+    background: #fff;
+}
+
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+    font-weight: 900;
+    font-size: 12px;
+    color: #000;
+}
+
+.navbar-inverse .navbar-toggle {
+    border-color: transparent;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: #FFF;
+}
+
+.top-banner input[type=search] {
+    margin-top: 25px;
+    border: 1px solid black;
+    border-radius: 0;
+
+}
+.top-banner h1{
+    font-size: 45px;
+}
+.navbar-default{
+    background: #fff;
+}
+@media (min-width: 768px) {
+    .cart-navbar {
+        left: 70px;
+        bottom: 10px;
+    }
+    .navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand{
+        margin-left:45px;
+    }
+    .navbar-inverse .navbar-brand:after {
+        content: 'SANDORA PASS';
     }
 
-    .menu-bottom button.navbar-toggle input[type="search"]{
-        border: 0.3px solid gray;
-        border-radius: 0;
+    .top-banner h1{
+    font-size: 38px;
+}
+}
+
+@media (max-width: 767px) {
+    .navbar-inverse .navbar-brand {
+        font-size: 18px;
     }
-
-
-    .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover{
-        background: #fff;
+    .navbar-inverse .navbar-brand:after {
+        content: 'SANDORA';
     }
-
-
-    .navbar-default .navbar-collapse, .navbar-default .navbar-form{
-        font-weight: 900;
-        font-size: 12px;
-        color: #000;
-
-
+    .top-banner {
+        display: none;
     }
+}
 
-    .navbar-inverse .navbar-toggle{
-        border-color: transparent;
-    }
+@media (min-width: 992px){
+      
+}
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover{
+    color: #cf000f;
+}

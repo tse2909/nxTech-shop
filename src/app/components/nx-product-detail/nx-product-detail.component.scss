@@ -322,7 +322,9 @@ body{
         position: relative
     }
 }
-
+.tab-content>.active{
+    margin-top: -20px;
+}
 .message img.online {
     width:40px;
     height:40px;

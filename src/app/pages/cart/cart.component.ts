@@ -3,6 +3,7 @@ import { Subject } from 'rxjs';
 import { Store, Action } from '@ngrx/store';
 import { getCalculatedCartList } from '../../ngrx/reducers';
 import { removeItem } from '../../ngrx/actions/products';
+import { updateItem } from '../../ngrx/actions/products';
 
 @Component({
   selector: 'app-cart',
@@ -23,5 +24,9 @@ export class CartComponent implements OnInit {
   deleteItem($event){
   this.actions$.next(removeItem($event));
   this.cart= this.store.let(getCalculatedCartList());
+  }
+
+  changeQty($event){
+    this.actions$.next(updateItem($event));
   }
 }

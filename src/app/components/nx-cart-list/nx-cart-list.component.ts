@@ -8,6 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class NxCartListComponent implements OnInit {
   @Input() cart;
   @Output() deleteItem = new EventEmitter();
+  @Output() changeQty = new EventEmitter();
   cartCount: number = 0;
   cartTotal: number = 0;
   constructor() { }
@@ -27,8 +28,8 @@ export class NxCartListComponent implements OnInit {
     }
   }
 
-  ngOnChanges(){
-     console.log(this.cart);
+  ngOnChanges() {
+    console.log(this.cart);
     if (this.cart == undefined) {
       this.cartCount = 0;
     } else {
@@ -41,5 +42,7 @@ export class NxCartListComponent implements OnInit {
       }
     }
   }
+
+
 
 }
