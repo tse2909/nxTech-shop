@@ -4,7 +4,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { NxMenuComponent, NxMenuItemComponent, NxPageTopComponent,NxCartNavbarComponent, NxProductListComponent, NxProductDetailComponent, NxCartListComponent, NxPageFooterComponent } from '../components';
-import { NxMenuService, NxProductService } from '../services';
+import { NxMenuService, NxProductService, NxPagingService } from '../services';
 // import { CartNavbarComponent } from './cart-navbar/cart-navbar.component';
 // import { NxCartNavbarComponent } from './nx-cart-navbar/nx-cart-navbar.component';
 // import { NxPageFooterComponent } from './nx-page-footer/nx-page-footer.component';
@@ -32,7 +32,8 @@ const NX_PIPES = [
 
 const NX_SERVICES = [
   NxMenuService,
-  NxProductService
+  NxProductService,
+  NxPagingService
 ];
 
 const NX_VALIDATORS = [

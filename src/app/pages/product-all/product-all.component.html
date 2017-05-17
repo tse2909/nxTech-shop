@@ -1,1 +1,1 @@
-<app-nx-product-list [products]="(brandProductList)" [title]="(title)" (gotoDetail)="gotoDetail($event)"></app-nx-product-list>
+<app-nx-product-list [products]="(pagedItems)" [title]="(title)" (gotoDetail)="gotoDetail($event)" [pager]="(pager)" (setPageEmit)="setPageEmit($event)"></app-nx-product-list>
