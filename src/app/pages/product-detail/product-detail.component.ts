@@ -51,4 +51,9 @@ export class ProductDetailComponent implements OnInit {
       this.cart = this.store.let(getCalculatedCartList());
     }, 300);
   }
+
+  gotoBrand($event){
+    this.router.navigate(['/pages/brand', $event])
+
+  }
 }

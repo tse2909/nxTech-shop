@@ -3,7 +3,7 @@
         <div class="row">
             <h2 class="text-center">{{title | uppercase}}</h2>
             <div *ngIf="pager" class="text-right" style="padding-right:45px; height: 50px; margin-top:-10px">
-                <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+                <ul *ngIf="pager.pages && pager.pages.length && pager.totalPages != 1" class="pagination">
                 <li *ngIf="pager.currentPage != 1" [ngClass]="{disabled:pager.currentPage === 1}">
                     <a (click)="setPage(1)"><<</a>
                 </li>

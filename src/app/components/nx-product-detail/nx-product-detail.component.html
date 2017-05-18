@@ -29,7 +29,7 @@
 
 				<h2 class="name">
 					{{product.name}}
-					<small>Product by <a href="javascript:void(0);">{{product.category}}</a></small>
+					<small>Product by <a (click)="gotoBrand.emit(product.category)">{{product.category}}</a></small>
 
 				</h2>
 				<hr>

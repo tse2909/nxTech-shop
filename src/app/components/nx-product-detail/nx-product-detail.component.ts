@@ -8,8 +8,9 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class NxProductDetailComponent implements OnInit {
   @Input() product: any;
   @Output() addtoCart = new EventEmitter();
+  @Output() gotoBrand = new EventEmitter();
   buttonText: string = 'ADD TO BAG';
-  addingCart:boolean = false;
+  addingCart: boolean = false;
   constructor() { }
 
   ngOnInit() {
@@ -17,11 +18,11 @@ export class NxProductDetailComponent implements OnInit {
   }
 
   addtoCartClick() {
-     this.addingCart = !this.addingCart;
-     console.log(this.addingCart);
+    this.addingCart = !this.addingCart;
+    console.log(this.addingCart);
     setTimeout(() => {
       this.addingCart = !this.addingCart;
-           console.log(this.addingCart);
+      console.log(this.addingCart);
       let data = { id: this.product.id, quantity: 1 }
       this.addtoCart.emit(data);
     }, 1000);

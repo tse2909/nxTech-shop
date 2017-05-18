@@ -18,7 +18,8 @@ export class ProductAllComponent implements OnInit {
   actions$ = new Subject<Action>();
   data; brandProducts;
   brandProductList;
-
+  selectedBrand: any;
+  sub: any;
   pager: any = {};
 
   // paged items
@@ -32,7 +33,7 @@ export class ProductAllComponent implements OnInit {
     this.actions$.next(getProducts());
 
     this.products = this.store.let(getProductsAsArry());
-
+    console.log(this)
     this.products.subscribe(k => this.brandProducts = k);
     this.route
       .data
@@ -56,7 +57,46 @@ export class ProductAllComponent implements OnInit {
         this.sortedData = this.brandProductList;
         this.title = "SALE ITEM"
       }
-    }
+    } else if (this.data.type === 'CATEGORIES') {
+      this.sub = this.route.params.subscribe(params => {
+        this.selectedBrand = params['brand']; // (+) converts string 'id' to a number
+        console.log(this.selectedBrand);
+        // In a real app: dispatch action to load the details here.
+      })
+      this.brandProductList = this.brandProducts.filter(item =>
+        item.categories[0].name === this.selectedBrand);
+      console.log(this.brandProductList);
+      this.sortedData = this.brandProductList;
+      this.setPage(1);
+      this.title = this.selectedBrand;
+
+    } else if (this.data.type === 'TAGS') {
+      this.sub = this.route.params.subscribe(params => {
+        this.selectedBrand = params['categories']; // (+) converts string 'id' to a number
+        console.log(this.selectedBrand);
+        // In a real app: dispatch action to load the details here.
+      })
+      this.brandProductList = this.brandProducts.filter(item =>
+        item.tags.length ? item.tags[0].name.toLowerCase() === this.selectedBrand : '' === this.selectedBrand);
+      console.log(this.brandProductList);
+      this.sortedData = this.brandProductList;
+      this.setPage(1);
+      this.title = this.selectedBrand;
+
+    } else if (this.data.type === 'SEARCH') {
+      this.sub = this.route.params.subscribe(params => {
+        this.selectedBrand = params['search']; // (+) converts string 'id' to a number
+        console.log(this.selectedBrand);
+        // In a real app: dispatch action to load the details here.
+      })
+      this.brandProductList = this.brandProducts.filter(item =>
+        item.name.toLowerCase().indexOf(this.selectedBrand.toLowerCase()) > -1);
+      console.log(this.brandProductList);
+      this.sortedData = this.brandProductList;
+      this.setPage(1);
+      this.title = this.selectedBrand;
+
+    };
     setInterval(() => {
       if (this.data.type === 'ALL') {
         if (this.data.filter === 'HOT') {
@@ -78,6 +118,31 @@ export class ProductAllComponent implements OnInit {
           this.sortedData = this.brandProductList;
           this.title = "SALE ITEM"
         }
+      } else if (this.data.type === 'CATEGORIES') {
+        this.sub = this.route.params.subscribe(params => {
+          this.selectedBrand = params['brand']; // (+) converts string 'id' to a number
+          console.log(this.selectedBrand);
+          // In a real app: dispatch action to load the details here.
+        })
+        this.brandProductList = this.brandProducts.filter(item =>
+          item.categories[0].name === this.selectedBrand);
+        // console.log(this.brandProductList);
+        this.sortedData = this.brandProductList;
+        this.setPage(this.pager.currentPage);
+        this.title = this.selectedBrand;
+      } else if (this.data.type === 'TAGS') {
+        this.sub = this.route.params.subscribe(params => {
+          this.selectedBrand = params['categories']; // (+) converts string 'id' to a number
+          // console.log(this.selectedBrand);
+          // In a real app: dispatch action to load the details here.
+        })
+        this.brandProductList = this.brandProducts.filter(item =>
+          item.tags.length ? item.tags[0].name.toLowerCase() === this.selectedBrand : '' === this.selectedBrand);
+        // console.log(this.brandProductList);
+        this.sortedData = this.brandProductList;
+        this.setPage(this.pager.currentPage);
+        this.title = this.selectedBrand;
+
       }
     }, 2000)
 
@@ -95,6 +160,9 @@ export class ProductAllComponent implements OnInit {
 
 
   setPage(page: number) {
+    if (!this.brandProductList.length) {
+      return;
+    }
     if (page < 1 || page > this.pager.totalPages) {
       return;
     }

@@ -7,7 +7,7 @@ import { routing } from './app.routing';
 import { AppComponent } from './app.component';
 import { ComponentsModule } from './components/components.module';
 import { GlobalState } from './global.state';
-
+import { reducer } from './ngrx/reducers/index';
 import { cartReducer } from './ngrx/reducers/cart';
 import { productsReducer } from './ngrx/reducers/products';
 import { StoreModule, combineReducers } from '@ngrx/store';
@@ -38,10 +38,7 @@ const APP_PROVIDERS = [
     BrowserModule,
     FormsModule,
     HttpModule,
-    StoreModule.provideStore({
-      cart: cartReducer,
-      products: productsReducer
-    }),
+    StoreModule.provideStore(reducer),
     EffectsModule.run(ShopEffects),
     StoreDevtoolsModule.instrumentOnlyWithExtension(),
     routing,

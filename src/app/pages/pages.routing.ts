@@ -22,8 +22,11 @@ export const routes: Routes = [
       { path: 'cart', loadChildren: './cart/cart.module#CartModule' },
       { path: 'checkout', loadChildren: './checkout/checkout.module#CheckoutModule' },
       { path: 'home', loadChildren: './home/home.module#HomeModule' },
-      { path: 'new', loadChildren: './product-all/product-all.module#ProductAllModule', data : {type : 'ALL', filter: 'NEW'} },
-      { path: 'sale', loadChildren: './product-all/product-all.module#ProductAllModule', data : {type : 'ALL', filter: 'SALE'}  },
+      { path: 'new', loadChildren: './product-all/product-all.module#ProductAllModule', data: { type: 'ALL', filter: 'NEW' } },
+      { path: 'sale', loadChildren: './product-all/product-all.module#ProductAllModule', data: { type: 'ALL', filter: 'SALE' } },
+      { path: 'brand/:brand', loadChildren: './product-all/product-all.module#ProductAllModule', data: { type: 'CATEGORIES'} },
+            { path: 'search/:search', loadChildren: './product-all/product-all.module#ProductAllModule', data: { type: 'SEARCH'} },
+      { path: 'categories/:categories', loadChildren: './product-all/product-all.module#ProductAllModule', data: { type: 'TAGS'} },
       { path: 'product/:id', loadChildren: './product-detail/product-detail.module#ProductDetailModule' },
     ]
   }

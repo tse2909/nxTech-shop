@@ -36,7 +36,7 @@
     </div>
     <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
 
-      <input type="search" name="" id="input1/(\w+)/\u\1/g" class="form-control" value="" required="required" title="" placeholder="Search Sandora">
+      <input #search (keyup.enter)="_router.navigate(['/pages/search', search.value])" type="search" class="form-control" required="required" placeholder="Search Sandora">
 
     </div>
     <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2" style="margin-top:10px">

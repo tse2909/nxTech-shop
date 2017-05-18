@@ -9,11 +9,43 @@ import { compose } from '@ngrx/core/compose';
 import * as fromCart from './cart';
 import * as fromProducts from './products';
 
+import { ActionReducer } from '@ngrx/store';
+import { storeFreeze } from 'ngrx-store-freeze';
+import { combineReducers } from '@ngrx/store';
+import { environment } from '../../../environments/environment';
+import { localStorageSync } from 'ngrx-store-localstorage';
 export interface AppState {
     cart: fromCart.CartState;
     products: fromProducts.ProductsState;
 }
 
+const reducers = {
+  cart: fromCart.cartReducer,
+  products: fromProducts.productsReducer,
+ 
+};
+
+const developmentReducer: ActionReducer<AppState> = compose(
+	storeFreeze,
+	localStorageSync({keys: ['products','cart'], rehydrate: true}),
+	// storeLogger({
+	// 	level: 'info',
+	// 	collapsed: true,
+	// }),
+	combineReducers)(reducers);
+
+const productionReducer: ActionReducer<AppState> = compose(
+	localStorageSync({keys: ['products','cart'], rehydrate: true}),
+	combineReducers)(reducers);
+
+export function reducer(state: any, action: any) {
+  if (environment.production) {
+    return productionReducer(state, action);
+  }
+  else {
+    return developmentReducer(state, action);
+  }
+}
 
 export function getCartState() {
     return (state$: Observable<AppState>) => state$

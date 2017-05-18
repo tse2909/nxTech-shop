@@ -57,10 +57,10 @@ export const PAGES_MENU = [
         ]
       },
       {
-        path: 'mac',
+        path: '#/pages/categories/cleanser',
         data: {
           menu: {
-            title: 'Makeup',
+            title: 'Cleanser',
             icon: 'ion-edit',
             selected: false,
             expanded: false,
@@ -69,10 +69,10 @@ export const PAGES_MENU = [
         }
       },
       {
-        path: 'iPad',
+        path: '#/pages/categories/toner',
         data: {
           menu: {
-            title: 'Skincare',
+            title: 'Toner',
             icon: 'ion-gear-a',
             selected: false,
             expanded: false,
@@ -81,7 +81,7 @@ export const PAGES_MENU = [
         }
       },
       {
-        path: 'iPad',
+        path: '#/pages/sale',
         data: {
           menu: {
             title: 'Men',
@@ -93,7 +93,7 @@ export const PAGES_MENU = [
         }
       },
       {
-        path: 'iPad',
+        path: '#/pages/sale',
         data: {
           menu: {
             title: 'Brands',
