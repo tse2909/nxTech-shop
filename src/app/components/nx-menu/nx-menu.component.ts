@@ -20,7 +20,7 @@ export class NxMenuComponent implements OnInit {
   public outOfArea: number = -200;
 
   menuPaths = [];
-  constructor(private _router: Router, private _service: NxMenuService) {
+  constructor(public _router: Router, private _service: NxMenuService) {
     
    }
 
