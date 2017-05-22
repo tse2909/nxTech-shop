@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Subject } from 'rxjs';
-import { Store, Action } from '@ngrx/store';
-import { Observable } from 'rxjs/Observable';
-import { getProductsAsArry, getCalculatedCartList, getProductEntities, getCartCnt, getProductState } from '../../ngrx/reducers';
-import { getProducts } from '../../ngrx/actions/products';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Store, Action } from '@ngrx/store';
+import { Subject } from 'rxjs';
+import { Observable } from 'rxjs/Observable';
+import { getProductsAsArry, getCalculatedCartList } from '../../ngrx/reducers';
+import { getProducts } from '../../ngrx/actions/products';
 
 import { NxPagingService } from '../../services/nx-paging';
 
@@ -21,7 +21,6 @@ export class ProductAllComponent implements OnInit {
   selectedBrand: any;
   sub: any;
   pager: any = {};
-
   // paged items
   pagedItems: any[];
 
@@ -145,14 +144,12 @@ export class ProductAllComponent implements OnInit {
 
       }
     }, 2000)
-
-
-
   }
 
   ngOnInit() {
 
   }
+
   gotoDetail($event) {
     console.log($event);
     this.router.navigate(['/pages/product', $event])

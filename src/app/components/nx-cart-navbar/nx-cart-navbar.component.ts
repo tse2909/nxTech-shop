@@ -6,12 +6,12 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./nx-cart-navbar.component.scss']
 })
 export class NxCartNavbarComponent implements OnInit {
-  @Input() cart:any;
+  @Input() cart: any;
   cartCount;
   constructor() { }
 
   ngOnInit() {
-        if (this.cart == undefined) {
+    if (this.cart == undefined) {
       this.cartCount = 0;
     } else {
       this.cartCount = 0;

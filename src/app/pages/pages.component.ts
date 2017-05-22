@@ -1,10 +1,10 @@
 import { Component, OnInit, OnChanges, Renderer } from '@angular/core';
 import { Routes } from '@angular/router';
-
+import { Store } from '@ngrx/store';
 import { NxMenuService } from '../services';
 import { PAGES_MENU } from './pages.menu';
-import { Store } from '@ngrx/store';
 import { getCalculatedCartList } from '../ngrx/reducers';
+
 @Component({
   selector: 'app-pages',
   templateUrl: './pages.component.html',
@@ -24,6 +24,7 @@ export class PagesComponent implements OnInit, OnChanges  {
       this.cart = this.store.let(getCalculatedCartList());
       console.log(this.cart);
     }
+    
    onDeactivate() {
     this.renderer.setElementProperty(document.body, "scrollTop", 0);
   }

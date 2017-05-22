@@ -1,13 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, Params } from '@angular/router';
-import 'rxjs/add/operator/switchMap';
+import { Store, Action } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs';
-
-import { Store, Action } from '@ngrx/store';
-import { getProductbyId,getCalculatedCartList } from '../../ngrx/reducers';
-import {addToCart} from '../../ngrx/actions/products';
-
+import { getProductbyId, getCalculatedCartList } from '../../ngrx/reducers';
+import { addToCart } from '../../ngrx/actions/products';
+import 'rxjs/add/operator/switchMap';
 
 @Component({
   selector: 'app-product-detail',
@@ -25,9 +23,7 @@ export class ProductDetailComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     public store: Store<any>) {
-      this.actions$.subscribe(store);
-
-      
+    this.actions$.subscribe(store);
     this.sub = this.route.params.subscribe(params => {
       this.selectedId = params['id']; // (+) converts string 'id' to a number
       console.log(this.selectedId);
@@ -43,16 +39,13 @@ export class ProductDetailComponent implements OnInit {
 
   }
   addToCartOutput($event) {
-
     setTimeout(() => {
-      
-
       this.actions$.next(this.addToCartAction($event));
       this.cart = this.store.let(getCalculatedCartList());
     }, 300);
   }
 
-  gotoBrand($event){
+  gotoBrand($event) {
     this.router.navigate(['/pages/brand', $event])
 
   }

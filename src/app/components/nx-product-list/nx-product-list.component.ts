@@ -5,7 +5,7 @@ import { NxProductService } from '../../services/nx-product';
   templateUrl: './nx-product-list.component.html',
   styleUrls: ['./nx-product-list.component.scss']
 })
-export class NxProductListComponent implements OnInit,OnChanges {
+export class NxProductListComponent implements OnInit, OnChanges {
   @Input() products: any;
   @Input() title: any;
   @Input() pager: any;
@@ -17,17 +17,17 @@ export class NxProductListComponent implements OnInit,OnChanges {
   }
 
   ngOnInit() {
-    if(!this.title){
-      this.title ="ALL ITEMS"
+    if (!this.title) {
+      this.title = "ALL ITEMS"
     }
     console.log(this.pager);
   }
 
-  ngOnChanges(){
+  ngOnChanges() {
     console.log(this.products);
   }
 
-  setPage($event){
+  setPage($event) {
     console.log($event);
     this.setPageEmit.emit($event);
   }

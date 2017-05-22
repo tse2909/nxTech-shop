@@ -8,8 +8,7 @@ import { NxMenuService } from '../../services';
   styleUrls: ['./nx-menu.component.scss']
 })
 export class NxMenuComponent implements OnInit {
-  @Input() cart:any;
-
+  @Input() cart: any;
 
   public menuItems: any[];
   protected _menuItemsSub: Subscription;
@@ -21,8 +20,7 @@ export class NxMenuComponent implements OnInit {
 
   menuPaths = [];
   constructor(public _router: Router, private _service: NxMenuService) {
-    
-   }
+  }
 
   public updateMenu(newMenuItems) {
     this.menuItems = newMenuItems;

@@ -6,10 +6,10 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./nx-page-top.component.scss']
 })
 export class NxPageTopComponent implements OnInit {
-@Input() cart:any;
+  @Input() cart: any;
   constructor() { }
 
   ngOnInit() {
   }
-  
+
 }
